@@ -14,15 +14,7 @@
 
   <h1>🎮 Pragmatics Quest</h1>
 
-  <div id="menu">
-    <p>Select a level:</p>
-    <button onclick="startGame('friends')">Friends</button>
-    <button onclick="startGame('school')">School</button>
-    <button onclick="startGame('authority')">Authority</button>
-  </div>
-
-  <div id="game" class="hidden">
-    <p id="levelLabel"></p>
+  <div id="game">
     <p id="score"></p>
 
     <div class="dialogue-box">
@@ -36,6 +28,7 @@
     </div>
 
     <button onclick="nextRound()">Next</button>
+    <button onclick="restartGame()">Restart Game</button>
   </div>
 
 </div>

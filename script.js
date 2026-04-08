@@ -5,199 +5,95 @@ let allQuestions = [
   {
     text: "Your friend returned your hoodie with a stain. What do you say?",
     options: [
-      { text: "What did you do to my hoodie?!", correct: false, type: "too direct", explanation: "Aggressive and accusatory." },
-      { text: "Hey, I think there is a stain on this. Do you know what happened?", correct: true, type: "appropriate", explanation: "Soft and effective." },
-      { text: "It's fine.", correct: false, type: "too indirect", explanation: "Avoids the issue." },
-      { text: "You always ruin my stuff.", correct: false, type: "too harsh", explanation: "Overgeneralizes." }
+      { text: "What did you do to my hoodie?!", score: 0, type: "too direct", explanation: "Aggressive and accusatory." },
+      { text: "Hey, I think there’s a stain here—do you know what happened?", score: 1, type: "appropriate", explanation: "Balanced and natural." },
+      { text: "There’s a stain on this.", score: 0.5, type: "acceptable", explanation: "Clear, but slightly blunt." },
+      { text: "It's fine.", score: 0, type: "too indirect", explanation: "Avoids the issue." }
     ]
   },
 
   {
     text: "You are late to meet your friend. What do you say?",
     options: [
-      { text: "I'm late.", correct: false, type: "too blunt", explanation: "No apology." },
-      { text: "Sorry I'm late! I'll be there in 10 minutes.", correct: true, type: "appropriate", explanation: "Apology + info." },
-      { text: "Relax.", correct: false, type: "dismissive", explanation: "Minimizes impact." },
-      { text: "Traffic.", correct: false, type: "too vague", explanation: "Not enough effort." }
+      { text: "I'm late.", score: 0, type: "too blunt", explanation: "No apology." },
+      { text: "Sorry I'm late! I'll be there in 10 minutes.", score: 1, type: "appropriate", explanation: "Apology + information." },
+      { text: "Hey, I’m running a bit late.", score: 0.5, type: "acceptable", explanation: "Good, but lacks detail." },
+      { text: "Relax.", score: 0, type: "dismissive", explanation: "Minimizes impact." }
     ]
   },
 
   {
     text: "You want extra time for an assignment. What do you say?",
     options: [
-      { text: "Give me more time.", correct: false, type: "too direct", explanation: "Too commanding." },
-      { text: "Could I possibly have an extra day to finish this?", correct: true, type: "appropriate", explanation: "Polite request." },
-      { text: "I didn’t do it.", correct: false, type: "avoidance", explanation: "Doesn't solve it." },
-      { text: "This is unfair.", correct: false, type: "confrontational", explanation: "Sounds like a complaint." }
+      { text: "Give me more time.", score: 0, type: "too direct", explanation: "Too commanding." },
+      { text: "Could I possibly have an extra day to finish this?", score: 1, type: "appropriate", explanation: "Polite and indirect." },
+      { text: "Is it okay if I turn it in late?", score: 0.5, type: "acceptable", explanation: "Polite, but less formal." },
+      { text: "I didn’t do it.", score: 0, type: "avoidance", explanation: "Doesn’t solve the issue." }
     ]
   },
 
   {
     text: "You think your teacher graded you unfairly. What do you say?",
     options: [
-      { text: "This grade is wrong.", correct: false, type: "too direct", explanation: "Too blunt." },
-      { text: "I was wondering if we could review my grade together.", correct: true, type: "appropriate", explanation: "Respectful and indirect." },
-      { text: "You made a mistake.", correct: false, type: "accusatory", explanation: "Sounds confrontational." },
-      { text: "Okay.", correct: false, type: "passive", explanation: "No communication." }
+      { text: "This grade is wrong.", score: 0, type: "too direct", explanation: "Too blunt." },
+      { text: "I was wondering if we could review my grade together.", score: 1, type: "appropriate", explanation: "Respectful and indirect." },
+      { text: "I think there might be a mistake.", score: 0.5, type: "acceptable", explanation: "Polite, but less collaborative." },
+      { text: "You made a mistake.", score: 0, type: "accusatory", explanation: "Sounds confrontational." }
     ]
   },
 
   {
     text: "A server brought you the wrong drink. What do you say?",
     options: [
-      { text: "This is wrong.", correct: false, type: "too direct", explanation: "Too blunt." },
-      { text: "Excuse me, I think I ordered a Sprite.", correct: true, type: "appropriate", explanation: "Polite correction." },
-      { text: "Why did you bring this?", correct: false, type: "accusatory", explanation: "Blaming tone." },
-      { text: "Whatever.", correct: false, type: "dismissive", explanation: "Too informal." }
+      { text: "This is wrong.", score: 0, type: "too direct", explanation: "Too blunt." },
+      { text: "Excuse me, I think I ordered a Sprite.", score: 1, type: "appropriate", explanation: "Polite correction." },
+      { text: "I asked for something else.", score: 0.5, type: "acceptable", explanation: "Clear, but slightly blunt." },
+      { text: "Whatever.", score: 0, type: "dismissive", explanation: "Too informal." }
     ]
   },
 
   {
     text: "You didn’t understand the homework. What do you say?",
     options: [
-      { text: "I don't get it.", correct: false, type: "too blunt", explanation: "Too abrupt." },
-      { text: "Could you explain it again, please?", correct: true, type: "appropriate", explanation: "Polite request." },
-      { text: "This makes no sense.", correct: false, type: "negative", explanation: "Sounds critical." },
-      { text: "Never mind.", correct: false, type: "avoidance", explanation: "Gives up." }
+      { text: "I don't get it.", score: 0, type: "too blunt", explanation: "Too abrupt." },
+      { text: "Could you explain it again, please?", score: 1, type: "appropriate", explanation: "Polite request." },
+      { text: "I’m not sure I understood—could you go over it again?", score: 0.5, type: "acceptable", explanation: "Good, but slightly less direct." },
+      { text: "This makes no sense.", score: 0, type: "negative", explanation: "Sounds critical." }
     ]
   },
 
   {
-  text: "It is 11:30 PM on a Tuesday. Your neighbor is playing very loud music and you have an exam tomorrow. What do you say?",
-  options: [
-    {
-      text: "Turn that music down right now!",
-      correct: false,
-      type: "too direct",
-      explanation: "This is a command and sounds aggressive, especially with someone you don't know well."
-    },
-    {
-      text: "Hey, sorry to bother you, but it's quite loud and I have an exam tomorrow. Would it be possible to lower the volume?",
-      correct: true,
-      type: "appropriate",
-      explanation: "Excellent: uses apology + softener + modal ('would it be possible')."
-    },
-    {
-      text: "It's really loud.",
-      correct: false,
-      type: "underdeveloped",
-      explanation: "Not rude, but too vague. It doesn’t clearly communicate a request."
-    },
-    {
-      text: "You’re being really inconsiderate.",
-      correct: false,
-      type: "too harsh",
-      explanation: "This is a judgment/criticism, not a request."
-    }
-  ]
-},
+    text: "It is 11:30 PM and your neighbor is playing loud music. What do you say?",
+    options: [
+      { text: "Turn that music down right now!", score: 0, type: "too direct", explanation: "Sounds aggressive." },
+      { text: "Sorry to bother you, but it’s quite loud and I have an exam tomorrow. Would it be possible to lower it?", score: 1, type: "appropriate", explanation: "Excellent use of softeners and modal." },
+      { text: "It’s really loud.", score: 0.5, type: "acceptable", explanation: "Not rude, but too vague." },
+      { text: "You’re being inconsiderate.", score: 0, type: "too harsh", explanation: "Judgment, not a request." }
+    ]
+  },
 
   {
-  text: "You are at a nice restaurant and your fork has dried food on it. What do you say?",
-  options: [
-    {
-      text: "This is dirty. Bring me a clean one.",
-      correct: false,
-      type: "too direct",
-      explanation: "Too blunt and commanding."
-    },
-    {
-      text: "Excuse me, there seems to be a slight problem with this fork. Could I get a clean one?",
-      correct: true,
-      type: "appropriate",
-      explanation: "Great use of 'there seems to be' + 'slight problem' + modal 'could'."
-    },
-    {
-      text: "Um, this fork…",
-      correct: false,
-      type: "too indirect",
-      explanation: "Too hesitant and unclear."
-    },
-    {
-      text: "I think this might not be clean—could I have another one?",
-      correct: false,
-      type: "acceptable",
-      explanation: "Good and polite, but slightly less refined than the best option."
-    }
-  ]
-},
-
-  {
-  text: "You got a C on a presentation you worked hard on. You think the grade is unfair. What do you say?",
-  options: [
-    {
-      text: "This grade is wrong. Fix it.",
-      correct: false,
-      type: "inappropriate",
-      explanation: "Too blunt and ignores the teacher-student power dynamic."
-    },
-    {
-      text: "I was wondering if we could go over my presentation. I might be missing something.",
-      correct: true,
-      type: "appropriate",
-      explanation: "Excellent: indirect + face-saving + collaborative tone."
-    },
-    {
-      text: "I think this grade is a little unfair.",
-      correct: false,
-      type: "acceptable",
-      explanation: "Not rude, but still a bit direct and potentially face-threatening."
-    },
-    {
-      text: "Why did you give me such a low grade?",
-      correct: false,
-      type: "too confrontational",
-      explanation: "This sounds accusatory."
-    }
-  ]
-},
-
-  {
-  text: "Your friend returns your hoodie with a stain that wasn’t there before. What do you say?",
-  options: [
-    {
-      text: "You always ruin my stuff.",
-      correct: false,
-      type: "too harsh",
-      explanation: "Uses overgeneralization ('always'), which escalates conflict."
-    },
-    {
-      text: "Hey, I think there’s a stain here—do you know what happened?",
-      correct: true,
-      type: "appropriate",
-      explanation: "Balanced: indirect but still addresses the issue."
-    },
-    {
-      text: "There’s a stain on this.",
-      correct: false,
-      type: "acceptable",
-      explanation: "Clear, but a bit blunt for a friend."
-    },
-    {
-      text: "It's fine, don't worry about it.",
-      correct: false,
-      type: "too indirect",
-      explanation: "Avoids the issue completely."
-    }
-  ]
-}
+    text: "You are at a restaurant and your fork is dirty. What do you say?",
+    options: [
+      { text: "This is dirty. Bring me another one.", score: 0, type: "too direct", explanation: "Too blunt." },
+      { text: "Excuse me, there seems to be a slight problem with this fork. Could I get another one?", score: 1, type: "appropriate", explanation: "Very polite and indirect." },
+      { text: "I think this isn’t clean—could I have another one?", score: 0.5, type: "acceptable", explanation: "Good, but less refined." },
+      { text: "Um… this fork…", score: 0, type: "too indirect", explanation: "Too unclear." }
+    ]
+  }
 ];
 
-// safer copy (instead of [...allQuestions])
 let remainingQuestions = allQuestions.slice();
-
 let currentQuestion = null;
 
 function shuffleArray(array) {
   let shuffled = array.slice();
-
   for (let i = shuffled.length - 1; i > 0; i--) {
     let j = Math.floor(Math.random() * (i + 1));
     let temp = shuffled[i];
     shuffled[i] = shuffled[j];
     shuffled[j] = temp;
   }
-
   return shuffled;
 }
 
@@ -206,7 +102,7 @@ function nextRound() {
   if (remainingQuestions.length === 0) {
     document.getElementById("situation").innerText = "🎉 You finished all questions!";
     document.getElementById("options").innerHTML = "";
-    document.getElementById("feedback").innerText = "Choose an option to see feedback.";
+    document.getElementById("feedback").innerText = "";
     return;
   }
 
@@ -222,7 +118,7 @@ function nextRound() {
 
   let shuffledOptions = shuffleArray(currentQuestion.options);
 
-shuffledOptions.forEach(function(option) {
+  shuffledOptions.forEach(function(option) {
     let btn = document.createElement("button");
     btn.className = "option";
     btn.innerText = option.text;
@@ -235,7 +131,7 @@ shuffledOptions.forEach(function(option) {
   });
 
   document.getElementById("feedback").innerText = "Choose an option to see feedback.";
-document.getElementById("feedback").style.color = "#666";
+  document.getElementById("feedback").style.color = "#666";
 }
 
 function handleAnswer(option) {
@@ -248,24 +144,25 @@ function handleAnswer(option) {
     btn.disabled = true;
   });
 
+  score += option.score;
+
   let feedbackText = "[" + option.type.toUpperCase() + "]\n" + option.explanation;
 
-  if (option.correct) {
-    score++;
-
+  if (option.score === 1) {
     remainingQuestions = remainingQuestions.filter(function(q) {
       return q !== currentQuestion;
     });
-
     feedbackText = "✅ " + feedbackText;
+  } else if (option.score === 0.5) {
+    feedbackText = "🟡 " + feedbackText;
   } else {
     feedbackText = "❌ " + feedbackText;
   }
 
   document.getElementById("feedback").innerText = feedbackText;
-document.getElementById("feedback").style.color = "#000";
+  document.getElementById("feedback").style.color = "#000";
 
-updateScore();
+  updateScore();
 }
 
 function updateScore() {
@@ -279,6 +176,5 @@ function restartGame() {
   nextRound();
 }
 
-// start game
 updateScore();
 nextRound();

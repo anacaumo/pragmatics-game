@@ -82,7 +82,7 @@ button:disabled {
   line-height: 1.4;
 }
 
-button:last-child {
+.restart-btn {
   margin-top: 5px;
   background: #ffe0e0;
   border: 3px solid #ff8a8a;

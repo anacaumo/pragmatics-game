@@ -6,7 +6,7 @@ let allQuestions = [
     text: "Your friend returned your hoodie with a stain. What do you say?",
     options: [
       { text: "What did you do to my hoodie?!", correct: false, type: "too direct", explanation: "Aggressive and accusatory." },
-      { text: "Hey, I think there’s a stain on this. Do you know what happened?", correct: true, type: "appropriate", explanation: "Soft and effective." },
+      { text: "Hey, I think there is a stain on this. Do you know what happened?", correct: true, type: "appropriate", explanation: "Soft and effective." },
       { text: "It's fine.", correct: false, type: "too indirect", explanation: "Avoids the issue." },
       { text: "You always ruin my stuff.", correct: false, type: "too harsh", explanation: "Overgeneralizes." }
     ]
@@ -63,10 +63,13 @@ let allQuestions = [
   }
 ];
 
-let remainingQuestions = [...allQuestions];
+// safer copy (instead of [...allQuestions])
+let remainingQuestions = allQuestions.slice();
+
 let currentQuestion = null;
 
 function nextRound() {
+
   if (remainingQuestions.length === 0) {
     document.getElementById("situation").innerText = "🎉 You finished all questions!";
     document.getElementById("options").innerHTML = "";
@@ -76,20 +79,22 @@ function nextRound() {
 
   answered = false;
 
-  const index = Math.floor(Math.random() * remainingQuestions.length);
+  let index = Math.floor(Math.random() * remainingQuestions.length);
   currentQuestion = remainingQuestions[index];
 
   document.getElementById("situation").innerText = currentQuestion.text;
 
-  const optionsDiv = document.getElementById("options");
+  let optionsDiv = document.getElementById("options");
   optionsDiv.innerHTML = "";
 
-  currentQuestion.options.forEach(option => {
-    const btn = document.createElement("button");
+  currentQuestion.options.forEach(function(option) {
+    let btn = document.createElement("button");
     btn.className = "option";
     btn.innerText = option.text;
 
-    btn.onclick = () => handleAnswer(option);
+    btn.onclick = function () {
+      handleAnswer(option);
+    };
 
     optionsDiv.appendChild(btn);
   });
@@ -102,16 +107,19 @@ function handleAnswer(option) {
 
   answered = true;
 
-  const buttons = document.querySelectorAll(".option");
-  buttons.forEach(btn => btn.disabled = true);
+  let buttons = document.querySelectorAll(".option");
+  buttons.forEach(function(btn) {
+    btn.disabled = true;
+  });
 
-  let feedbackText = `[${option.type.toUpperCase()}]\n${option.explanation}`;
+  let feedbackText = "[" + option.type.toUpperCase() + "]\n" + option.explanation;
 
   if (option.correct) {
     score++;
 
-    // remove question if correct
-    remainingQuestions = remainingQuestions.filter(q => q !== currentQuestion);
+    remainingQuestions = remainingQuestions.filter(function(q) {
+      return q !== currentQuestion;
+    });
 
     feedbackText = "✅ " + feedbackText;
   } else {
@@ -119,6 +127,7 @@ function handleAnswer(option) {
   }
 
   document.getElementById("feedback").innerText = feedbackText;
+
   updateScore();
 }
 
@@ -128,11 +137,11 @@ function updateScore() {
 
 function restartGame() {
   score = 0;
-  remainingQuestions = [...allQuestions];
+  remainingQuestions = allQuestions.slice();
   updateScore();
   nextRound();
 }
 
-// start game immediately
+// start game
 updateScore();
 nextRound();

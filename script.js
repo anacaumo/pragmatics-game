@@ -100,7 +100,7 @@ let allQuestions = [
 
     { text: "Excuse me, there seems to be a slight problem with this fork. Could I get another one?", score: 1, type: "appropriate", explanation: "Uses 'there seems to be' + 'slight' + modal ('could'). Highly mitigated request." },
 
-    { text: "I think this isn’t clean. Could I have another one?", score: 0.5, type: "acceptable", explanation: "Uses softener ('I think') + modal ('could'), but less formal." },
+    { text: "I think this isn’t clean. Could I have another one?", score: 0.5, type: "appropriate", explanation: "Uses softener ('I think') + modal ('could')." },
 
     { text: "Um… this fork…", score: 0, type: "too indirect", explanation: "Too vague. No clear request." }
   ]

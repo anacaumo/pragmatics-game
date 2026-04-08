@@ -99,7 +99,8 @@ function nextRound() {
     optionsDiv.appendChild(btn);
   });
 
-  document.getElementById("feedback").innerText = "";
+  document.getElementById("feedback").innerText = "Choose an option to see feedback.";
+document.getElementById("feedback").style.color = "#666";
 }
 
 function handleAnswer(option) {
@@ -127,8 +128,9 @@ function handleAnswer(option) {
   }
 
   document.getElementById("feedback").innerText = feedbackText;
+document.getElementById("feedback").style.color = "#000";
 
-  updateScore();
+updateScore();
 }
 
 function updateScore() {

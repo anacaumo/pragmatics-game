@@ -73,7 +73,7 @@ function nextRound() {
   if (remainingQuestions.length === 0) {
     document.getElementById("situation").innerText = "🎉 You finished all questions!";
     document.getElementById("options").innerHTML = "";
-    document.getElementById("feedback").innerText = "";
+    document.getElementById("feedback").innerText = "Choose an option to see feedback.";
     return;
   }
 

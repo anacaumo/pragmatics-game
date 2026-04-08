@@ -87,3 +87,9 @@ button:disabled {
   background: #ffe0e0;
   border: 3px solid #ff8a8a;
 }
+
+#feedback {
+  font-size: 9px;
+  line-height: 1.4;
+  color: #666;
+}

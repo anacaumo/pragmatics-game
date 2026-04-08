@@ -6,8 +6,8 @@ let allQuestions = [
     text: "Your friend returned your hoodie with a stain. What do you say?",
     options: [
       { text: "What did you do to my hoodie?!", score: 0, type: "too direct", explanation: "Aggressive and accusatory." },
-      { text: "Hey, I think there’s a stain here—do you know what happened?", score: 1, type: "appropriate", explanation: "Balanced and natural." },
-      { text: "There’s a stain on this.", score: 0.5, type: "acceptable", explanation: "Clear, but slightly blunt." },
+      { text: "Hey, I think there’s a stain here—do you know what happened?", score: 1, type: "appropriate", explanation: "Uses softener ('I think') + indirect question instead of accusation." },
+      { text: "There’s a stain on this.", score: 0.5, type: "acceptable", explanation: "Clear, but no softener or question." },
       { text: "It's fine.", score: 0, type: "too indirect", explanation: "Avoids the issue." }
     ]
   },
@@ -15,9 +15,9 @@ let allQuestions = [
   {
     text: "You are late to meet your friend. What do you say?",
     options: [
-      { text: "I'm late.", score: 0, type: "too blunt", explanation: "No apology." },
-      { text: "Sorry I'm late! I'll be there in 10 minutes.", score: 1, type: "appropriate", explanation: "Apology + information." },
-      { text: "Hey, I’m running a bit late.", score: 0.5, type: "acceptable", explanation: "Good, but lacks detail." },
+      { text: "I'm late.", score: 0, type: "too blunt", explanation: "Too blunt." },
+      { text: "Sorry I'm late! I'll be there in 10 minutes.", score: 1, type: "appropriate", explanation: "Includes apology + specific information (repair strategy)."},
+      { text: "Hey, I’m running a bit late.", score: 0.5, type: "acceptable", explanation: "Uses softener ('a bit'), but lacks detail" },
       { text: "Relax.", score: 0, type: "dismissive", explanation: "Minimizes impact." }
     ]
   },
@@ -26,8 +26,8 @@ let allQuestions = [
     text: "You want extra time for an assignment. What do you say?",
     options: [
       { text: "Give me more time.", score: 0, type: "too direct", explanation: "Too commanding." },
-      { text: "Could I possibly have an extra day to finish this?", score: 1, type: "appropriate", explanation: "Polite and indirect." },
-      { text: "Is it okay if I turn it in late?", score: 0.5, type: "acceptable", explanation: "Polite, but less formal." },
+      { text: "Could I possibly have an extra day to finish this?", score: 1, type: "appropriate", explanation: "Uses modal ('could') + softener ('possibly')." },
+      { text: "Is it okay if I turn it in late?", score: 0.5, type: "acceptable", explanation: "Polite question, but less formal and less mitigated." },
       { text: "I didn’t do it.", score: 0, type: "avoidance", explanation: "Doesn’t solve the issue." }
     ]
   },
@@ -36,8 +36,8 @@ let allQuestions = [
     text: "You think your teacher graded you unfairly. What do you say?",
     options: [
       { text: "This grade is wrong.", score: 0, type: "too direct", explanation: "Too blunt." },
-      { text: "I was wondering if we could review my grade together.", score: 1, type: "appropriate", explanation: "Respectful and indirect." },
-      { text: "I think there might be a mistake.", score: 0.5, type: "acceptable", explanation: "Polite, but less collaborative." },
+      { text: "I was wondering if we could review my grade together.", score: 1, type: "appropriate", explanation: "Uses intro phrase ('I was wondering if') + collaborative language." },
+      { text: "I think there might be a mistake.", score: 0.5, type: "acceptable", explanation: "Uses softeners ('I think', 'might'), but less collaborative." },
       { text: "You made a mistake.", score: 0, type: "accusatory", explanation: "Sounds confrontational." }
     ]
   },
@@ -46,8 +46,8 @@ let allQuestions = [
     text: "A server brought you the wrong drink. What do you say?",
     options: [
       { text: "This is wrong.", score: 0, type: "too direct", explanation: "Too blunt." },
-      { text: "Excuse me, I think I ordered a Sprite.", score: 1, type: "appropriate", explanation: "Polite correction." },
-      { text: "I asked for something else.", score: 0.5, type: "acceptable", explanation: "Clear, but slightly blunt." },
+      { text: "Excuse me, I think I ordered a Sprite.", score: 1, type: "appropriate", explanation: "Uses softener ('I think') + indirect correction." },
+      { text: "I asked for something else.", score: 0.5, type: "acceptable", explanation: "Clear, but no softener. Slightly blunt." },
       { text: "Whatever.", score: 0, type: "dismissive", explanation: "Too informal." }
     ]
   },
@@ -56,9 +56,9 @@ let allQuestions = [
     text: "You didn’t understand the homework. What do you say?",
     options: [
       { text: "I don't get it.", score: 0, type: "too blunt", explanation: "Too abrupt." },
-      { text: "Could you explain it again, please?", score: 1, type: "appropriate", explanation: "Polite request." },
-      { text: "I’m not sure I understood—could you go over it again?", score: 0.5, type: "acceptable", explanation: "Good, but slightly less direct." },
-      { text: "This makes no sense.", score: 0, type: "negative", explanation: "Sounds critical." }
+      { text: "Could you explain it again, please?", score: 1, type: "appropriate", explanation: "Uses modal ('could') + 'please' for politeness." },
+      { text: "I’m not sure I understood. Could you go over it again?", score: 1, type: "appropriate", explanation: "Takes responsibility + uses modal ('could'). Effective." },
+      { text: "This makes no sense.", score: 0, type: "negative", explanation: "Sounds too critical." }
     ]
   },
 
@@ -66,8 +66,8 @@ let allQuestions = [
     text: "It is 11:30 PM and your neighbor is playing loud music. What do you say?",
     options: [
       { text: "Turn that music down right now!", score: 0, type: "too direct", explanation: "Sounds aggressive." },
-      { text: "Sorry to bother you, but it’s quite loud and I have an exam tomorrow. Would it be possible to lower it?", score: 1, type: "appropriate", explanation: "Excellent use of softeners and modal." },
-      { text: "It’s really loud.", score: 0.5, type: "acceptable", explanation: "Not rude, but too vague." },
+      { text: "Sorry to bother you, but it’s quite loud and I have an exam tomorrow. Would it be possible to lower it?", score: 1, type: "appropriate", explanation: "Uses apology + softener ('quite') + modal ('would it be possible')." },
+      { text: "It’s really loud.", score: 0.5, type: "acceptable", explanation: "States problem, but no request or softening strategy." },
       { text: "You’re being inconsiderate.", score: 0, type: "too harsh", explanation: "Judgment, not a request." }
     ]
   },
@@ -76,8 +76,8 @@ let allQuestions = [
     text: "You are at a restaurant and your fork is dirty. What do you say?",
     options: [
       { text: "This is dirty. Bring me another one.", score: 0, type: "too direct", explanation: "Too blunt." },
-      { text: "Excuse me, there seems to be a slight problem with this fork. Could I get another one?", score: 1, type: "appropriate", explanation: "Very polite and indirect." },
-      { text: "I think this isn’t clean—could I have another one?", score: 0.5, type: "acceptable", explanation: "Good, but less refined." },
+      { text: "Excuse me, there seems to be a slight problem with this fork. Could I get another one?", score: 1, type: "appropriate", explanation: "Uses 'there seems to be' + 'slight' + modal ('could'). Very polite." },
+      { text: "I think this isn’t clean. Could I have another one?", score: 0.5, type: "acceptable", explanation: "Uses softener ('I think') + modal ('could'), but less refined." },
       { text: "Um… this fork…", score: 0, type: "too indirect", explanation: "Too unclear." }
     ]
   }

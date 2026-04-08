@@ -16,7 +16,7 @@ const data = {
           explanation: "This sounds aggressive and accusatory."
         },
         {
-          text: "Hey, I think there’s a stain on this. Do you know what happened?",
+          text: "Hey, I think there's a stain on this. Do you know what happened?",
           type: "appropriate",
           correct: true,
           explanation: "Good balance: soft, but still addresses the problem."
@@ -219,7 +219,9 @@ function nextRound() {
     btn.className = "option";
     btn.innerText = option.text;
 
-    btn.onclick = () => handleAnswer(option);
+    btn.onclick = function () {
+      handleAnswer(option);
+    };
 
     optionsDiv.appendChild(btn);
   });
@@ -235,7 +237,7 @@ function handleAnswer(option) {
   const buttons = document.querySelectorAll(".option");
   buttons.forEach(btn => btn.disabled = true);
 
-  let feedbackText = `[${option.type.toUpperCase()}]\n${option.explanation}`;
+  let feedbackText = "[" + option.type.toUpperCase() + "]\n" + option.explanation;
 
   if (option.correct) {
     score++;
@@ -251,5 +253,4 @@ function handleAnswer(option) {
 
 function updateScore() {
   document.getElementById("score").innerText = "Score: " + score;
-}
 }

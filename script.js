@@ -6,7 +6,7 @@ let allQuestions = [
     text: "Your friend returned your hoodie with a stain. What do you say?",
     options: [
       { text: "What did you do to my hoodie?!", score: 0, type: "too direct", explanation: "Aggressive and accusatory." },
-      { text: "Hey, I think there’s a stain here—do you know what happened?", score: 1, type: "appropriate", explanation: "Uses softener ('I think') + indirect question instead of accusation." },
+      { text: "Hey, I think there’s a stain here. Do you know what happened?", score: 1, type: "appropriate", explanation: "Uses softener ('I think') + indirect question instead of accusation." },
       { text: "There’s a stain on this.", score: 0.5, type: "acceptable", explanation: "Clear, but no softener or question." },
       { text: "It's fine.", score: 0, type: "too indirect", explanation: "Avoids the issue." }
     ]

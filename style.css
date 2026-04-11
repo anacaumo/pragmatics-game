@@ -93,3 +93,84 @@ button:disabled {
   line-height: 1.4;
   color: #666;
 }
+
+/* ===== SETUP SCREEN FIXES ===== */
+
+#setup {
+  margin-top: 20px;
+  text-align: center;
+}
+
+#setup h2 {
+  font-size: 12px; /* smaller than title */
+  margin-bottom: 10px;
+}
+
+#setup label {
+  font-size: 10px;
+}
+
+#teamNames {
+  margin-top: 10px;
+}
+
+.team-input {
+  display: block;
+  margin: 6px auto;
+  padding: 6px;
+  font-family: inherit;
+  text-align: center;
+  width: 180px;
+  font-size: 10px;
+}
+
+#setup button {
+  margin-top: 10px;
+}
+
+
+/* ===== SCOREBOARD ===== */
+
+#scoreboard {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin: 10px 0;
+  flex-wrap: wrap;
+}
+
+.team-box {
+  border: 2px solid #6c5ce7;
+  padding: 6px;
+  min-width: 70px;
+  max-width: 90px;
+  background: #fdfcff;
+  text-align: center;
+}
+
+/* team name */
+.team-name {
+  font-size: 9px;
+  margin-bottom: 3px;
+  word-break: break-word;
+}
+
+/* score number */
+.team-score {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+/* active team highlight */
+.active-team {
+  border: 2px solid #8c7ae6;
+  background: #e9e4ff;
+}
+
+
+/* ===== CURRENT TEAM TEXT ===== */
+
+#currentTeam {
+  margin: 8px 0;
+  font-size: 10px;
+}
